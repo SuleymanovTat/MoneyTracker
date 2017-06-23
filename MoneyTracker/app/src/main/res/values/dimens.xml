@@ -3,4 +3,7 @@
     <dimen name="text_size">45sp</dimen>
     <dimen name="edit_name_margin">16dp</dimen>
     <dimen name="tv_add_padding">16dp</dimen>
+    <dimen name="edit_price_width">60dp</dimen>
+    <dimen name="radius_shadows">5dp</dimen>
+    <dimen name="bottom_shadows">2dp</dimen>
 </resources>

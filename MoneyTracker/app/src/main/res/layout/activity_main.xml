@@ -27,7 +27,7 @@
         <EditText
             android:id="@+id/edit_price"
             style="@style/EditTextStyle"
-            android:layout_width="60dp"
+            android:layout_width="@dimen/edit_price_width"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:hint="@string/price_hint"

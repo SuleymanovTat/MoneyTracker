@@ -4,10 +4,10 @@
         <shape
             android:shape="rectangle">
             <solid android:color="@android:color/darker_gray" />
-            <corners android:radius="5dp"/>
+            <corners android:radius="@dimen/radius_shadows"/>
         </shape>
     </item>
-    <item android:bottom="2dp">
+    <item android:bottom="@dimen/bottom_shadows">
         <shape
             android:shape="rectangle">
             <solid android:color="@android:color/white"/>
