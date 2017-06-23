@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">MoneyTracker</string>
-    <string name="hello_world">Hello World!</string>
+    <string name="name_hint">Название</string>
+    <string name="price_hint">0</string>
+    <string name="ruble">P</string>
+    <string name="click_button">Click button</string>
+    <string name="plus">+</string>
 </resources>
