@@ -6,13 +6,28 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="EditTextStyle">
+    <style name="EditTextAddStyle">
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:fontFamily">sans-serif-condensed</item>
-        <item name="android:textColor">@color/colorTextColor</item>
-        <item name="android:textColorHint">@color/colorTextColor</item>
+        <item name="android:textColor">@color/colorTextAdd</item>
+        <item name="android:textColorHint">@color/colorTextAdd</item>
         <item name="android:maxLines">1</item>
     </style>
 
+    <style name="ItemTextSyle">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">@dimen/name_size</item>
+        <item name="android:textColor">@color/colorTextItem</item>
+        <item name="android:background">@color/colorName</item>
+
+    </style>
+
+    <style name="ItemTextPriceSyle" parent="ItemTextSyle">
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/price_size</item>
+        <item name="android:background">@color/colorPrice</item>
+    </style>
 </resources>

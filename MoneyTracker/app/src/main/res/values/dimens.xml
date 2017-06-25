@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="text_size">45sp</dimen>
+    <dimen name="text_size">46sp</dimen>
     <dimen name="edit_name_margin">16dp</dimen>
-    <dimen name="tv_add_padding">16dp</dimen>
+    <dimen name="tv_item_padding">16dp</dimen>
     <dimen name="edit_price_width">60dp</dimen>
     <dimen name="radius_shadows">5dp</dimen>
     <dimen name="bottom_shadows">2dp</dimen>
+    <dimen name="fragment_padding">8dp</dimen>
+    <dimen name="tv_item_price">16dp</dimen>
+    <dimen name="ruble_size">22sp</dimen>
+    <dimen name="name_size">20sp</dimen>
+    <dimen name="price_size">24sp</dimen>
+    <dimen name="dividers_size">4dp</dimen>
 </resources>

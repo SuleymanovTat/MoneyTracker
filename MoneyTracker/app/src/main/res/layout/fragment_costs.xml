@@ -1,0 +1,16 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/fragment_padding"
+    android:background="@drawable/bg_pattern"
+    tools:context="ru.suleymanovtat.moneytracker.fragments.CostsFragment">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_costs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_costs" />
+</RelativeLayout>
