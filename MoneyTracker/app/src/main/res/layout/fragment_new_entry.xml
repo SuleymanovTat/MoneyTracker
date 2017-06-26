@@ -15,44 +15,32 @@
 
         <EditText
             android:id="@+id/edit_name"
-            style="@style/EditTextAddStyle"
+            style="@style/EditTextNameStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/edit_name_margin"
-            android:layout_marginStart="@dimen/edit_name_margin"
             android:layout_weight="1"
-            android:hint="@string/name_hint"
-            android:inputType="text" />
+            tools:ignore="LabelFor" />
 
         <EditText
             android:id="@+id/edit_price"
             style="@style/EditTextAddStyle"
             android:layout_width="@dimen/edit_price_width"
             android:layout_height="wrap_content"
-            android:gravity="end"
-            android:hint="@string/price_hint"
-            android:inputType="number" />
+            tools:ignore="LabelFor" />
 
         <TextView
             android:id="@+id/tv_ruble"
+            style="@style/TextViewRubleNewEnterStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:enabled="false"
-            android:text="@string/ruble"
-            android:textColor="@color/colorTextAdd"
             tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/tv_add"
+            style="@style/TextViewAddStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:enabled="false"
-            android:paddingEnd="@dimen/tv_item_padding"
-            android:paddingStart="@dimen/tv_item_padding"
             android:text="@string/plus"
-            android:textColor="@color/colorTextAdd"
-            android:textSize="@dimen/text_size"
             tools:ignore="HardcodedText" />
     </LinearLayout>
 </FrameLayout>

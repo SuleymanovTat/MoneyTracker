@@ -51,7 +51,6 @@ public class CostsAdapter extends RecyclerView.Adapter<CostsAdapter.ViewHolder> 
         return listCosts == null ? 0 : listCosts.size();
     }
 
-
     class ViewHolder extends RecyclerView.ViewHolder {
         private TextView tvName;
         private TextView tvPrice;
