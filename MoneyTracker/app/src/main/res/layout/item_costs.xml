@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ItemStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/ItemTextSyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="Молоко" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        style="@style/ItemTextPriceSyle"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        tools:text="15" />
+
+    <TextView
+        android:id="@+id/tv_ruble"
+        style="@style/ItemTextRulbeSyle"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+</LinearLayout>

@@ -1,58 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_pattern"
     tools:context="ru.suleymanovtat.moneytracker.MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btn_new_entry"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/background_with_shadow"
-        android:orientation="horizontal"
-        tools:ignore="UselessParent">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/new_entry" />
 
-        <EditText
-            android:id="@+id/edit_name"
-            style="@style/EditTextStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/edit_name_margin"
-            android:layout_marginStart="@dimen/edit_name_margin"
-            android:layout_weight="1"
-            android:hint="@string/name_hint"
-            android:inputType="text" />
+    <Button
+        android:id="@+id/btn_costs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btn_new_entry"
+        android:layout_toEndOf="@+id/btn_new_entry"
+        android:text="@string/costs" />
 
-        <EditText
-            android:id="@+id/edit_price"
-            style="@style/EditTextStyle"
-            android:layout_width="@dimen/edit_price_width"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:hint="@string/price_hint"
-            android:inputType="number" />
-
-        <TextView
-            android:id="@+id/tv_ruble"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:enabled="false"
-            android:text="@string/ruble"
-            android:textColor="@color/colorTextColor"
-            tools:ignore="HardcodedText" />
-
-        <TextView
-            android:id="@+id/tv_add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:paddingEnd="@dimen/tv_add_padding"
-            android:paddingStart="@dimen/tv_add_padding"
-            android:text="@string/plus"
-            android:textColor="@color/colorTextColor"
-            android:textSize="@dimen/text_size"
-            tools:ignore="HardcodedText" />
-    </LinearLayout>
-</FrameLayout>
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btn_new_entry" />
+</RelativeLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_pattern"
+    tools:context="ru.suleymanovtat.moneytracker.fragments.CostsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_with_shadow"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+
+        <EditText
+            android:id="@+id/edit_name"
+            style="@style/EditTextNameStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:ignore="LabelFor" />
+
+        <EditText
+            android:id="@+id/edit_price"
+            style="@style/EditTextAddStyle"
+            android:layout_width="@dimen/edit_price_width"
+            android:layout_height="wrap_content"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:id="@+id/tv_ruble"
+            style="@style/TextViewRubleNewEnterStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_add"
+            style="@style/TextViewAddStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/plus"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+</FrameLayout>

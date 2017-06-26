@@ -3,6 +3,10 @@
     <string name="name_hint">Название</string>
     <string name="price_hint">0</string>
     <string name="ruble">P</string>
+    <string name="ruble21">₽</string>
     <string name="click_button">Click button</string>
     <string name="plus">+</string>
+    <string name="new_entry">Новая запись</string>
+    <string name="costs">Расходы</string>
+
 </resources>

@@ -1,31 +1,23 @@
 package ru.suleymanovtat.moneytracker;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements TextWatcher, View.OnClickListener {
+import ru.suleymanovtat.moneytracker.fragments.CostsFragment;
+import ru.suleymanovtat.moneytracker.fragments.NewEntryFragment;
 
-    private TextView tvAdd;
-    private EditText editName;
-    private EditText editPrice;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        tvAdd = (TextView) findViewById(R.id.tv_add);
-        editName = (EditText) findViewById(R.id.edit_name);
-        editPrice = (EditText) findViewById(R.id.edit_price);
-        tvAdd.setOnClickListener(this);
-        editName.addTextChangedListener(this);
-        editPrice.addTextChangedListener(this);
+        Button btnNewEntry = (Button) findViewById(R.id.btn_new_entry);
+        btnNewEntry.setOnClickListener(view -> showFragment(new NewEntryFragment()));
+        Button btnCosts = (Button) findViewById(R.id.btn_costs);
+        btnCosts.setOnClickListener(view -> showFragment(new CostsFragment()));
     }
 
     @Override
@@ -38,22 +30,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, View
         super.onStop();
     }
 
-    @Override
-    public void beforeTextChanged(CharSequence text, int start, int before, int count) {
-    }
-
-    @Override
-    public void onTextChanged(CharSequence text, int start, int before, int count) {
-        tvAdd.setEnabled(!TextUtils.isEmpty(editName.getText().toString().trim())
-                && !TextUtils.isEmpty(editPrice.getText().toString().trim()));
-    }
-
-    @Override
-    public void afterTextChanged(Editable editable) {
-    }
-
-    @Override
-    public void onClick(View view) {
-        Toast.makeText(MainActivity.this, R.string.click_button, Toast.LENGTH_LONG).show();
+    private void showFragment(Fragment fragment) {
+        getFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
     }
 }
