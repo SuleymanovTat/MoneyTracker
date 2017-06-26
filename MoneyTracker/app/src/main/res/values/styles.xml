@@ -16,18 +16,34 @@
     </style>
 
     <style name="ItemTextSyle">
+        <item name="android:padding">@dimen/tv_item_padding</item>
         <item name="android:fontFamily">sans-serif-light</item>
-        <item name="android:maxLines">1</item>
         <item name="android:textSize">@dimen/name_size</item>
         <item name="android:textColor">@color/colorTextItem</item>
         <item name="android:background">@color/colorName</item>
 
     </style>
 
-    <style name="ItemTextPriceSyle" parent="ItemTextSyle">
+    <style name="ItemTextPriceSyle">
+        <item name="android:paddingLeft">@dimen/tv_item_price</item>
+        <item name="android:maxLines">1</item>
         <item name="android:gravity">center</item>
         <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/colorTextItem</item>
         <item name="android:textSize">@dimen/price_size</item>
         <item name="android:background">@color/colorPrice</item>
+    </style>
+
+    <style name="ItemTextRulbeSyle" parent="ItemTextPriceSyle">
+        <item name="android:paddingLeft">@dimen/zero</item>
+        <item name="android:paddingRight">@dimen/tv_item_price</item>
+        <item name="android:textSize">@dimen/ruble_size</item>
+        <item name="android:text">@string/ruble</item>
+    </style>
+
+    <style name="ItemStyle">
+        <item name="android:layout_marginBottom">@dimen/dividers_size</item>
+        <item name="android:layout_marginTop">@dimen/dividers_size</item>
+        <item name="android:orientation">horizontal</item>
     </style>
 </resources>
