@@ -7,4 +7,5 @@
     <color name="colorTextItem">#ffffff</color>
     <color name="colorName">#fbc335</color>
     <color name="colorPrice">#e4ad33</color>
+    <color name="colorTabIndicatorColor">#fffe95</color>
 </resources>

@@ -6,6 +6,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <style name="EditTextNameStyle">
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:background">@android:color/transparent</item>
@@ -73,4 +82,18 @@
         <item name="android:textColor">@color/colorTextAdd</item>
         <item name="android:textSize">@dimen/text_size</item>
     </style>
+
+    <style name="BackgroundStyle">
+        <item name="android:background">@drawable/bg_pattern</item>
+    </style>
+    <style name="ItemRelativeStyle" parent="BackgroundStyle">
+        <item name="android:padding">@dimen/fragment_padding</item>
+    </style>
+
+    <style name="TextViewBalanceStyle">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+
 </resources>
