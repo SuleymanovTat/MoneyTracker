@@ -13,4 +13,5 @@
     <dimen name="price_size">24sp</dimen>
     <dimen name="dividers_size">4dp</dimen>
     <dimen name="zero">0dp</dimen>
+    <dimen name="tab_indicator_height">2dp</dimen>
 </resources>

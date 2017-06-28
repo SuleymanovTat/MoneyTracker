@@ -1,12 +1,13 @@
 package ru.suleymanovtat.moneytracker;
 
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Button;
 
-import ru.suleymanovtat.moneytracker.fragments.CostsFragment;
-import ru.suleymanovtat.moneytracker.fragments.NewEntryFragment;
+import ru.suleymanovtat.moneytracker.adapters.ViewPagerAdapter;
+import ru.suleymanovtat.moneytracker.fragments.BalanceFragment;
+import ru.suleymanovtat.moneytracker.fragments.ItemsFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,23 +15,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button btnNewEntry = (Button) findViewById(R.id.btn_new_entry);
-        btnNewEntry.setOnClickListener(view -> showFragment(new NewEntryFragment()));
-        Button btnCosts = (Button) findViewById(R.id.btn_costs);
-        btnCosts.setOnClickListener(view -> showFragment(new CostsFragment()));
+        ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
+        setupViewPager(viewPager);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
-    private void showFragment(Fragment fragment) {
-        getFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new ItemsFragment(), getString(R.string.costs));
+        adapter.addFragment(new ItemsFragment(), getString(R.string.income));
+        adapter.addFragment(new BalanceFragment(), getString(R.string.balance));
+        viewPager.setAdapter(adapter);
     }
 }

@@ -3,9 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/fragment_padding"
-    android:background="@drawable/bg_pattern"
-    tools:context="ru.suleymanovtat.moneytracker.fragments.CostsFragment">
+    tools:context="ru.suleymanovtat.moneytracker.fragments.ItemsFragment"
+    style="@style/ItemRelativeStyle">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_costs"

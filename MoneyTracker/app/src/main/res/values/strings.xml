@@ -8,5 +8,8 @@
     <string name="plus">+</string>
     <string name="new_entry">Новая запись</string>
     <string name="costs">Расходы</string>
+    <string name="budget_accounting">Учет бюджета</string>
+    <string name="income">Доходы</string>
+    <string name="balance">Баланс</string>
 
 </resources>

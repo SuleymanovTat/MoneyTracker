@@ -11,26 +11,26 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import ru.suleymanovtat.moneytracker.R;
-import ru.suleymanovtat.moneytracker.models.Costs;
+import ru.suleymanovtat.moneytracker.models.Item;
 
-public class CostsAdapter extends RecyclerView.Adapter<CostsAdapter.ViewHolder> {
+public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
-    private ArrayList<Costs> listCosts;
+    private ArrayList<Item> listCosts;
     private Context context;
 
-    public CostsAdapter(Context context, ArrayList<Costs> listCosts) {
+    public ItemAdapter(Context context, ArrayList<Item> listCosts) {
         this.context = context;
         this.listCosts = listCosts;
     }
 
     @Override
-    public CostsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ItemAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_costs, parent, false));
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Costs costs = listCosts.get(position);
+        Item costs = listCosts.get(position);
         holder.tvName.setText(costs.getName());
         holder.tvPrice.setText(String.valueOf(costs.getPrice()));
         if (context != null) {
