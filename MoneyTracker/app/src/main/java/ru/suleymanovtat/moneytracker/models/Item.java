@@ -5,9 +5,9 @@ public class Item {
     public static final String TYPE_EXPENSE = "expense";
     public static final String TYPE_INCOME = "income";
     private String name;
-    private double price;
+    private int price;
 
-    public Item(String name, double price) {
+    public Item(String name, int price) {
         this.name = name;
         this.price = price;
     }
@@ -24,7 +24,7 @@ public class Item {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 }
