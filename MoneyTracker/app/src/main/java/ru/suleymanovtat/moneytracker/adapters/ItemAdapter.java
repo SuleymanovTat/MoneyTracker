@@ -3,6 +3,7 @@ package ru.suleymanovtat.moneytracker.adapters;
 import android.content.Context;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,16 +12,17 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import ru.suleymanovtat.moneytracker.R;
+import ru.suleymanovtat.moneytracker.models.AddResult;
 import ru.suleymanovtat.moneytracker.models.Item;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
-    private ArrayList<Item> listCosts;
+    private ArrayList<Item> listItems;
     private Context context;
 
-    public ItemAdapter(Context context, ArrayList<Item> listCosts) {
+    public ItemAdapter(Context context, ArrayList<Item> listItems) {
         this.context = context;
-        this.listCosts = listCosts;
+        this.listItems = listItems;
     }
 
     @Override
@@ -30,7 +32,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Item costs = listCosts.get(position);
+        Item costs = listItems.get(position);
         holder.tvName.setText(costs.getName());
         holder.tvPrice.setText(String.valueOf(costs.getPrice()));
         if (context != null) {
@@ -48,7 +50,20 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return listCosts == null ? 0 : listCosts.size();
+        return listItems == null ? 0 : listItems.size();
+    }
+
+    public void clear() {
+        listItems.clear();
+    }
+
+    public void addAll(ArrayList<Item> items) {
+        this.listItems.addAll(items);
+        notifyDataSetChanged();
+    }
+
+    public void addItem(AddResult data) {
+        Log.d("my", "data " + data);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

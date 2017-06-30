@@ -86,6 +86,7 @@
     <style name="BackgroundStyle">
         <item name="android:background">@drawable/bg_pattern</item>
     </style>
+
     <style name="ItemRelativeStyle" parent="BackgroundStyle">
         <item name="android:padding">@dimen/fragment_padding</item>
     </style>
@@ -95,5 +96,8 @@
         <item name="android:layout_centerHorizontal">true</item>
     </style>
 
-
+    <style name="FabStyle">
+        <item name="android:layout_gravity">bottom|end</item>
+        <item name="android:layout_margin">@dimen/fab_margin</item>
+    </style>
 </resources>
