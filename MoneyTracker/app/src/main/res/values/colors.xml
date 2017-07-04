@@ -8,8 +8,8 @@
     <color name="colorName">#fbc335</color>
     <color name="colorPrice">#e4ad33</color>
     <color name="colorTabIndicatorColor">#fffe95</color>
-    <color name="colorPrimaryFab">#F44782</color>
-    <color name="colorRippleFab">#F06292</color>
-    <color name="colorAccentPressedFab">#C2185B</color>
+    <color name="colorPrimaryFab">#32a79d</color>
+    <color name="colorRippleFab">#88fdf3</color>
+    <color name="colorAccentPressedFab">#23A69A</color>
     <color name="colorWhite">#FFFF</color>
 </resources>

@@ -88,7 +88,9 @@
     </style>
 
     <style name="ItemRelativeStyle" parent="BackgroundStyle">
-        <item name="android:padding">@dimen/fragment_padding</item>
+        <item name="android:paddingTop">@dimen/fragment_padding</item>
+        <item name="android:paddingEnd">@dimen/fragment_padding</item>
+        <item name="android:paddingStart">@dimen/fragment_padding</item>
     </style>
 
     <style name="TextViewBalanceStyle">
@@ -99,5 +101,6 @@
     <style name="FabStyle">
         <item name="android:layout_gravity">bottom|end</item>
         <item name="android:layout_margin">@dimen/fab_margin</item>
+        <item name="android:src">@drawable/ic_fab</item>
     </style>
 </resources>

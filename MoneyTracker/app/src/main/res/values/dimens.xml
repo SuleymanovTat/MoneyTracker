@@ -15,4 +15,5 @@
     <dimen name="zero">0dp</dimen>
     <dimen name="tab_indicator_height">2dp</dimen>
     <dimen name="fab_margin">8dp</dimen>
+    <dimen name="cardview_elevation">4dp</dimen>
 </resources>

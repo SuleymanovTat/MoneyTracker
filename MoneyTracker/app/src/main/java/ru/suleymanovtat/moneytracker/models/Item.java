@@ -1,6 +1,9 @@
 package ru.suleymanovtat.moneytracker.models;
 
-public class Item {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Item implements Parcelable {
 
     public static final String TYPE_EXPENSE = "expense";
     public static final String TYPE_INCOME = "income";
@@ -27,4 +30,32 @@ public class Item {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.name);
+        dest.writeInt(this.price);
+    }
+
+    private Item(Parcel in) {
+        this.name = in.readString();
+        this.price = in.readInt();
+    }
+
+    public static final Parcelable.Creator<Item> CREATOR = new Parcelable.Creator<Item>() {
+        @Override
+        public Item createFromParcel(Parcel source) {
+            return new Item(source);
+        }
+
+        @Override
+        public Item[] newArray(int size) {
+            return new Item[size];
+        }
+    };
 }
