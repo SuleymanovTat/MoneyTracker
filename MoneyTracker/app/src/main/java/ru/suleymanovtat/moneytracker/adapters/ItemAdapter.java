@@ -3,7 +3,6 @@ package ru.suleymanovtat.moneytracker.adapters;
 import android.content.Context;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import ru.suleymanovtat.moneytracker.R;
-import ru.suleymanovtat.moneytracker.models.AddResult;
 import ru.suleymanovtat.moneytracker.models.Item;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
@@ -62,8 +60,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         notifyDataSetChanged();
     }
 
-    public void addItem(AddResult data) {
-        Log.d("my", "data " + data);
+    public void addItem(Item item) {
+        this.listItems.add(0, item);
+        notifyItemChanged(0, item);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
@@ -73,9 +72,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
         private ViewHolder(View itemView) {
             super(itemView);
-            tvName = itemView.findViewById(R.id.tv_name);
-            tvPrice = itemView.findViewById(R.id.tv_price);
-            tvRuble = itemView.findViewById(R.id.tv_ruble);
+            tvName = (TextView) itemView.findViewById(R.id.tv_name);
+            tvPrice = (TextView) itemView.findViewById(R.id.tv_price);
+            tvRuble = (TextView) itemView.findViewById(R.id.tv_ruble);
         }
     }
 }

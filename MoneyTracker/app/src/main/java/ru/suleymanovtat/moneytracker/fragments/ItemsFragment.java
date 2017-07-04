@@ -1,5 +1,7 @@
 package ru.suleymanovtat.moneytracker.fragments;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
@@ -19,11 +21,12 @@ import ru.suleymanovtat.moneytracker.MoneyTrackerApp;
 import ru.suleymanovtat.moneytracker.R;
 import ru.suleymanovtat.moneytracker.adapters.ItemAdapter;
 import ru.suleymanovtat.moneytracker.api.MoneyTrackerApi;
-import ru.suleymanovtat.moneytracker.models.AddResult;
 import ru.suleymanovtat.moneytracker.models.Item;
 
 public class ItemsFragment extends Fragment {
 
+    private static final int REQUEST_CODE = 120;
+    private static final String ITEM_KEY = "item";
     public static final String BUNDLE_TYPE = "type";
     private static final int LOADER_ITEMS = 0;
     private static final int LOADER_ADD = 1;
@@ -37,51 +40,56 @@ public class ItemsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_items, container, false);
         api = ((MoneyTrackerApp) getActivity().getApplication()).getApi();
-        FloatingActionButton fab = view.findViewById(R.id.fab);
-        fab.setOnClickListener(view1 -> {
-            addItems();
-        });
-        final RecyclerView items = view.findViewById(R.id.recycler_costs);
+        final RecyclerView items = (RecyclerView) view.findViewById(R.id.recycler_costs);
         ArrayList<Item> listItems = new ArrayList<>();
         itemAdapter = new ItemAdapter(getActivity(), listItems);
         items.setAdapter(itemAdapter);
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        fab.attachToRecyclerView(items);
+        fab.setOnClickListener(view1 -> {
+            addItems();
+        });
         type = getArguments().getString(BUNDLE_TYPE);
         loadItems();
         return view;
     }
 
     private void addItems() {
-        getLoaderManager().initLoader(LOADER_ADD, null, new LoaderManager.LoaderCallbacks<AddResult>() {
-            @Override
-            public Loader<AddResult> onCreateLoader(int id, Bundle args) {
-                return new AsyncTaskLoader<AddResult>(getContext()) {
-                    @Override
-                    public AddResult loadInBackground() {
-                        try {
-                            return api.add("Молоко", 5, type).execute().body();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            return null;
-                        }
-                    }
-                };
+        AddItemFragment fragment = new AddItemFragment();
+        fragment.setTargetFragment(ItemsFragment.this, REQUEST_CODE);
+        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.maim_container, fragment).addToBackStack("null").commit();
 
-            }
-
-            @Override
-            public void onLoadFinished(Loader<AddResult> loader, AddResult data) {
-                if (data == null) {
-                    Toast.makeText(getContext(), R.string.error, Toast.LENGTH_SHORT).show();
-                } else {
-                    itemAdapter.addItem(data);
-                }
-            }
-
-            @Override
-            public void onLoaderReset(Loader<AddResult> loader) {
-
-            }
-        }).forceLoad();
+//        getLoaderManager().initLoader(LOADER_ADD, null, new LoaderManager.LoaderCallbacks<AddResult>() {
+//            @Override
+//            public Loader<AddResult> onCreateLoader(int id, Bundle args) {
+//                return new AsyncTaskLoader<AddResult>(getContext()) {
+//                    @Override
+//                    public AddResult loadInBackground() {
+//                        try {
+//                            return api.add("Молоко", 5, type).execute().body();
+//                        } catch (Exception e) {
+//                            e.printStackTrace();
+//                            return null;
+//                        }
+//                    }
+//                };
+//
+//            }
+//
+//            @Override
+//            public void onLoadFinished(Loader<AddResult> loader, AddResult data) {
+//                if (data == null) {
+//                    Toast.makeText(getContext(), R.string.error, Toast.LENGTH_SHORT).show();
+//                } else {
+//                    itemAdapter.addItem(data);
+//                }
+//            }
+//
+//            @Override
+//            public void onLoaderReset(Loader<AddResult> loader) {
+//
+//            }
+//        }).forceLoad();
     }
 
     private void loadItems() {
@@ -116,5 +124,13 @@ public class ItemsFragment extends Fragment {
 
             }
         }).forceLoad();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK && data != null) {
+            Item item = data.getParcelableExtra(ITEM_KEY);
+            itemAdapter.addItem(item);
+        }
     }
 }
