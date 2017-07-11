@@ -9,6 +9,8 @@ public class Item implements Parcelable {
     public static final String TYPE_INCOME = "income";
     private String name;
     private int price;
+    private boolean selected;
+    private int id;
 
     public Item(String name, int price) {
         this.name = name;
@@ -23,13 +25,30 @@ public class Item implements Parcelable {
         this.name = name;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
     public void setPrice(int price) {
         this.price = price;
     }
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     @Override
     public int describeContents() {
@@ -40,11 +59,15 @@ public class Item implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.name);
         dest.writeInt(this.price);
+        dest.writeByte(this.selected ? (byte) 1 : (byte) 0);
+        dest.writeInt(this.id);
     }
 
-    private Item(Parcel in) {
+    protected Item(Parcel in) {
         this.name = in.readString();
         this.price = in.readInt();
+        this.selected = in.readByte() != 0;
+        this.id = in.readInt();
     }
 
     public static final Parcelable.Creator<Item> CREATOR = new Parcelable.Creator<Item>() {
@@ -58,4 +81,14 @@ public class Item implements Parcelable {
             return new Item[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", selected=" + selected +
+                ", id=" + id +
+                '}';
+    }
 }

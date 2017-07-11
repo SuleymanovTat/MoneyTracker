@@ -4,19 +4,28 @@ import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 import ru.suleymanovtat.moneytracker.models.AddResult;
+import ru.suleymanovtat.moneytracker.models.AuthResult;
+import ru.suleymanovtat.moneytracker.models.BalanceResult;
 import ru.suleymanovtat.moneytracker.models.Item;
+import ru.suleymanovtat.moneytracker.models.Result;
 
 public interface MoneyTrackerApi {
 
-    @Headers("Content-Type: application/json")
     @GET("items")
     Call<ArrayList<Item>> items(@Query("type") String type);
 
-    @Headers("Content-Type: application/json")
     @POST("items/add")
-    Call<AddResult> add(@Query("name") String name, @Query("price") int price, @Query("type") String type);
+    Call<AddResult> addItem(@Query("name") String name, @Query("price") int price, @Query("type") String type);
+
+    @GET("auth")
+    Call<AuthResult> auth(@Query("social_user_id") String socialUserId);
+
+    @POST("items/remove")
+    Call<Result> remove(@Query("id") int id);
+
+    @GET("balance")
+    Call<BalanceResult> balance();
 }

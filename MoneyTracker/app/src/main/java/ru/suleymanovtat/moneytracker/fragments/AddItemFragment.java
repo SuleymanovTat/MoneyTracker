@@ -4,12 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -19,7 +20,7 @@ import android.widget.TextView;
 import ru.suleymanovtat.moneytracker.R;
 import ru.suleymanovtat.moneytracker.models.Item;
 
-public class AddItemFragment extends Fragment implements TextWatcher, View.OnClickListener {
+public class AddItemFragment extends BaseFragment implements TextWatcher, View.OnClickListener {
 
     private TextView tvAdd;
     private EditText editName;
@@ -29,15 +30,11 @@ public class AddItemFragment extends Fragment implements TextWatcher, View.OnCli
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_add, container, false);
+        setHasOptionsMenu(isVisible());
+        actionBar(getString(R.string.new_entry), true);
         tvAdd = (TextView) view.findViewById(R.id.tv_add);
         editName = (EditText) view.findViewById(R.id.edit_name);
         editPrice = (EditText) view.findViewById(R.id.edit_price);
-        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_black);
-        toolbar.setNavigationOnClickListener(view1 -> {
-            hideKeyboard();
-            getActivity().onBackPressed();
-        });
         tvAdd.setOnClickListener(this);
         editName.addTextChangedListener(this);
         editPrice.addTextChangedListener(this);
@@ -75,5 +72,32 @@ public class AddItemFragment extends Fragment implements TextWatcher, View.OnCli
                 imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
             }
         }
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        if (itemId == android.R.id.home) {
+            hideKeyboard();
+            getActivity().onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        actionBar(getString(R.string.app_name), false);
     }
 }

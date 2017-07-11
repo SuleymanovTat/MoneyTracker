@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "807714052640",
+    "project_id": "firebase-moneytracker"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807714052640:android:66c77011b9ddc2ce",
+        "android_client_info": {
+          "package_name": "ru.suleymanovtat.moneytracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "807714052640-6nq2kqqipd89jnh9o2s281m8voh6aj58.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ru.suleymanovtat.moneytracker",
+            "certificate_hash": "c017f7d7001f3eed769db641af9c101eeb15d5db"
+          }
+        },
+        {
+          "client_id": "807714052640-cu8thr2ifcgpr57fnc884d77kv3psa1d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASD_Y3n5OJzGee9Dl_Y8tnk8NdX030XnI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
