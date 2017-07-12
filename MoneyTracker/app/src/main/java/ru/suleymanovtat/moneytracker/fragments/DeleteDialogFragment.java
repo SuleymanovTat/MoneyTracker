@@ -23,7 +23,10 @@ public class DeleteDialogFragment extends DialogFragment {
                     getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_CANCELED, intent);
                 })
                 .setPositiveButton(R.string.ok, (dialog, which) -> {
-                    getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
+                    try {
+                        getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
+                    } catch (Exception ignore) {
+                    }
                 }).create();
     }
 }

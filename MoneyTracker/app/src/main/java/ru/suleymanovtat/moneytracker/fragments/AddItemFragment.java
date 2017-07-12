@@ -36,6 +36,7 @@ public class AddItemFragment extends BaseFragment implements TextWatcher, View.O
         editName = (EditText) view.findViewById(R.id.edit_name);
         editPrice = (EditText) view.findViewById(R.id.edit_price);
         tvAdd.setOnClickListener(this);
+        tvAdd.setEnabled(false);
         editName.addTextChangedListener(this);
         editPrice.addTextChangedListener(this);
         return view;

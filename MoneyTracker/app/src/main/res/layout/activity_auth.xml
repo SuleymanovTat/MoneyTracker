@@ -3,7 +3,6 @@
     style="@style/BackgroundColorStyle"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ru.suleymanovtat.moneytracker.fragments.AuthFragment"
     tools:ignore="ContentDescription">
 
     <ImageView

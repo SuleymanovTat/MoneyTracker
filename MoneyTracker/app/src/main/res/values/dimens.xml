@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="text_size">46sp</dimen>
-    <dimen name="edit_name_margin">16dp</dimen>
-    <dimen name="tv_item_padding">16dp</dimen>
+    <dimen name="edit_name_margin">22dp</dimen>
+    <dimen name="tv_item_padding">15dp</dimen>
     <dimen name="edit_price_width">60dp</dimen>
     <dimen name="radius_shadows">5dp</dimen>
     <dimen name="bottom_shadows">2dp</dimen>
@@ -14,17 +14,22 @@
     <dimen name="dividers_size">4dp</dimen>
     <dimen name="zero">0dp</dimen>
     <dimen name="tab_indicator_height">2dp</dimen>
-    <dimen name="fab_margin">8dp</dimen>
+    <dimen name="fab_margin_bottom">22dp</dimen>
+    <dimen name="fab_margin_end">10dp</dimen>
     <dimen name="cardview_elevation">4dp</dimen>
     <dimen name="textview_about">36dp</dimen>
     <dimen name="imageview_logo_bottom">36dp</dimen>
-
     <dimen name="margin_small">4dp</dimen>
-    <dimen name="text_xlarge">30sp</dimen>
-    <dimen name="text_large">24sp</dimen>
-    <dimen name="text_medium">16sp</dimen>
-    <dimen name="text_xxlarge">48sp</dimen>
-    <dimen name="tv_balance_top">40dp</dimen>
-    <dimen name="diagram_margin">20dp</dimen>
-
+    <dimen name="text_xlarge">24sp</dimen>
+    <dimen name="text_large">20sp</dimen>
+    <dimen name="text_medium">13sp</dimen>
+    <dimen name="text_xxlarge">50sp</dimen>
+    <dimen name="tv_balance_top">54dp</dimen>
+    <dimen name="diagram_margin">33dp</dimen>
+    <dimen name="name_text_size">20sp</dimen>
+    <dimen name="add_text_size">21sp</dimen>
+    <dimen name="text_ruble">2dp</dimen>
+    <dimen name="text_balance">20dp</dimen>
+    <dimen name="card_size">68dp</dimen>
+    <dimen name="text_income">50dp</dimen>
 </resources>
