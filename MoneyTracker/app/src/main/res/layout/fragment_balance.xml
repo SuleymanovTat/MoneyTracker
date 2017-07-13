@@ -1,13 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
-        style="@style/TextViewBalanceStyle"
+        android:id="@+id/tv_balance"
+        style="@style/TextBalanceStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/balance" />
-</RelativeLayout>
+        tools:text="48000 \u20bd" />
+
+    <TextView
+        android:id="@+id/tv_balance_caption"
+        style="@style/TextViewBalanceCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/your_balance" />
+
+    <TextView
+        android:id="@+id/tv_expense"
+        style="@style/TextViewExpenseStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_widthPercent="50%"
+        tools:text="15000 \u20bd" />
+
+    <TextView
+        android:id="@+id/tv_income"
+        style="@style/TextViewIncomeStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_widthPercent="50%"
+        tools:text="95000 \u20bd" />
+
+    <TextView
+        android:id="@+id/tv_expense_caption"
+        style="@style/TextViewexpenseCaptionStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/expense"
+        app:layout_widthPercent="50%" />
+
+    <TextView
+        style="@style/TextIncomeStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/income"
+        app:layout_widthPercent="50%" />
+
+    <ru.suleymanovtat.moneytracker.view.DiagramView
+        android:id="@+id/diagram"
+        style="@style/DiagramViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</android.support.percent.PercentRelativeLayout>

@@ -12,4 +12,10 @@
     <color name="colorRippleFab">#88fdf3</color>
     <color name="colorAccentPressedFab">#23A69A</color>
     <color name="colorWhite">#FFFF</color>
+    <color name="colorGrey">#30000000</color>
+    <color name="colorDustyOrange">#e67e22</color>
+    <color name="colorItem">#fcc31e</color>
+    <color name="colorExpense">#f76c41</color>
+    <color name="colorPrimaryBright">#3ab7ae</color>
+    <color name="colorComment">#95989a</color>
 </resources>

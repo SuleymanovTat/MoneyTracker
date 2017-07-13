@@ -6,21 +6,27 @@
     android:layout_height="match_parent"
     tools:context="ru.suleymanovtat.moneytracker.fragments.ItemsFragment">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_costs"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_costs" />
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_costs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            tools:listitem="@layout/item" />
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 
     <com.melnykov.fab.FloatingActionButton
         android:id="@+id/fab"
+        style="@style/FabStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:fab_colorNormal="@color/colorPrimaryFab"
         app:fab_colorPressed="@color/colorAccentPressedFab"
         app:fab_colorRipple="@color/colorRippleFab"
-        tools:ignore="MissingPrefix"
-        style="@style/FabStyle" />
+        tools:ignore="MissingPrefix" />
 </FrameLayout>

@@ -22,6 +22,7 @@
         <item name="android:textColor">@color/colorTextAdd</item>
         <item name="android:textColorHint">@color/colorTextAdd</item>
         <item name="android:maxLines">1</item>
+        <item name="android:textSize">@dimen/name_text_size</item>
         <item name="android:hint">@string/name_hint</item>
         <item name="android:inputType">text</item>
         <item name="android:layout_marginEnd">@dimen/edit_name_margin</item>
@@ -32,6 +33,7 @@
         <item name="android:hint">@string/price_hint</item>
         <item name="android:inputType">number</item>
         <item name="android:gravity">end</item>
+        <item name="android:textSize">@dimen/add_text_size</item>
         <item name="android:layout_marginEnd">@dimen/zero</item>
         <item name="android:layout_marginStart">@dimen/zero</item>
     </style>
@@ -41,8 +43,6 @@
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textSize">@dimen/name_size</item>
         <item name="android:textColor">@color/colorTextItem</item>
-        <item name="android:background">@color/colorName</item>
-
     </style>
 
     <style name="ItemTextPriceSyle">
@@ -52,7 +52,7 @@
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textColor">@color/colorTextItem</item>
         <item name="android:textSize">@dimen/price_size</item>
-        <item name="android:background">@color/colorPrice</item>
+        <item name="android:background">@color/colorGrey</item>
     </style>
 
     <style name="ItemTextRulbeSyle" parent="ItemTextPriceSyle">
@@ -70,21 +70,27 @@
 
     <style name="TextViewRubleNewEnterStyle">
         <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginTop">@dimen/text_ruble</item>
         <item name="android:enabled">false</item>
         <item name="android:textColor">@color/colorTextAdd</item>
-        <item name="android:text">@string/ruble</item>
+        <item name="android:text">@string/ruble21</item>
     </style>
 
     <style name="TextViewAddStyle">
-        <item name="android:enabled">false</item>
-        <item name="android:paddingEnd">@dimen/tv_item_padding</item>
-        <item name="android:paddingStart">@dimen/tv_item_padding</item>
+        <item name="android:paddingEnd">22dp</item>
+        <item name="android:paddingStart">42dp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">@dimen/zero</item>
         <item name="android:textColor">@color/colorTextAdd</item>
         <item name="android:textSize">@dimen/text_size</item>
     </style>
 
     <style name="BackgroundStyle">
-        <item name="android:background">@drawable/bg_pattern</item>
+        <item name="android:background">@drawable/ic_bg_pattern</item>
+    </style>
+
+    <style name="BackgroundColorStyle">
+        <item name="android:background">@color/colorPrimary</item>
     </style>
 
     <style name="ItemRelativeStyle" parent="BackgroundStyle">
@@ -100,7 +106,98 @@
 
     <style name="FabStyle">
         <item name="android:layout_gravity">bottom|end</item>
-        <item name="android:layout_margin">@dimen/fab_margin</item>
+        <item name="android:layout_marginBottom">@dimen/fab_margin_bottom</item>
+        <item name="android:layout_marginEnd">@dimen/fab_margin_end</item>
         <item name="android:src">@drawable/ic_fab</item>
     </style>
+
+    <style name="ImageIntroStyle">
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:background">@drawable/ic_bg_intro</item>
+        <item name="android:contentDescription">@string/image</item>
+    </style>
+
+    <style name="ButtonGoogleStyle">
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/ic_gplus_button</item>
+    </style>
+
+    <style name="TextViewAboutStyle">
+        <item name="android:layout_above">@+id/btn_auth</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginBottom">@dimen/textview_about</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="ImageViewLogoStyle">
+        <item name="android:layout_above">@+id/tv_about</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginBottom">@dimen/imageview_logo_bottom</item>
+        <item name="android:background">@drawable/ic_logo</item>
+        <item name="android:contentDescription">@string/image</item>
+    </style>
+
+    <style name="TextBalanceStyle">
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginBottom">@dimen/margin_small</item>
+        <item name="android:layout_marginTop">@dimen/tv_balance_top</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/colorPrimaryBright</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/text_xxlarge</item>
+    </style>
+
+    <style name="TextViewBalanceCaption">
+        <item name="android:layout_below">@id/tv_balance</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginBottom">@dimen/text_balance</item>
+        <item name="android:textColor">@color/colorComment</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+
+    <style name="TextViewExpenseStyle">
+        <item name="android:layout_below">@id/tv_balance_caption</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_marginTop">@dimen/text_income</item>
+        <item name="android:textColor">@color/colorExpense</item>
+        <item name="android:textSize">@dimen/text_xlarge</item>
+    </style>
+
+    <style name="TextViewIncomeStyle">
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_below">@id/tv_balance_caption</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_marginTop">@dimen/text_income</item>
+        <item name="android:textColor">@color/colorItem</item>
+        <item name="android:textSize">@dimen/text_xlarge</item>
+    </style>
+
+    <style name="TextViewexpenseCaptionStyle">
+        <item name="android:layout_below">@id/tv_expense</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">@color/colorComment</item>
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+
+    <style name="TextIncomeStyle">
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_below">@id/tv_expense</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">@color/colorComment</item>
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+
+    <style name="DiagramViewStyle">
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_below">@+id/tv_expense_caption</item>
+        <item name="android:layout_margin">@dimen/diagram_margin</item>
+    </style>
+
 </resources>

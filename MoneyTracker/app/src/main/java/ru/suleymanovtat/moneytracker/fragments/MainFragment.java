@@ -17,6 +17,7 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
+        setHasOptionsMenu(true);
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.view_pager);
         setupViewPager(viewPager);
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tabs);
